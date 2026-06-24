@@ -2,8 +2,7 @@ cask "mangolove-idea" do
   version "0.1.1"
   sha256 "f0ee74ef6337440a469f7532dd73d74eac2fc789431cc9740ed6c268b9a34abd"
 
-  url "https://github.com/SongJunSub/mangolove-idea/releases/download/v#{version}/MangoLove.IDEA-#{version}-arm64.dmg",
-      verified: "github.com/SongJunSub/mangolove-idea/"
+  url "https://github.com/SongJunSub/mangolove-idea/releases/download/v#{version}/MangoLove.IDEA-#{version}-arm64.dmg"
   name "MangoLove IDEA"
   desc "Local dev orchestrator for parallel git-worktree work beside IntelliJ IDEA"
   homepage "https://github.com/SongJunSub/mangolove-idea"
