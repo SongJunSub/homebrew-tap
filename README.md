@@ -7,14 +7,15 @@
 
 ```bash
 brew tap SongJunSub/tap
-brew install --cask --no-quarantine mangolove-idea
+brew install --cask mangolove-idea
 ```
 
-`--no-quarantine` is needed because the build is **unsigned** (Apple notarization
-requires a paid Apple Developer account). It tells Gatekeeper to trust the app so it
-opens without the "unidentified developer" prompt. Omit the flag and you'll get the
-prompt on first launch (clear it once via System Settings → Privacy & Security → "Open
-Anyway"). The app itself is unaffected either way.
+The build is **unsigned** (Apple notarization requires a paid Apple Developer account).
+The cask's `postflight` strips the Gatekeeper quarantine right after install, so the app
+opens **without** the "unidentified developer" prompt — no flag needed. (Homebrew removed
+the old `--no-quarantine` flag; the cask does the equivalent itself.) Because the tap runs
+a post-install step, Homebrew prints a one-time tap-trust note — expected for any tap with
+install scripts.
 
 ## Upgrade / uninstall
 
