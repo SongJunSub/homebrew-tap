@@ -7,15 +7,18 @@
 
 ```bash
 brew tap SongJunSub/tap
+brew trust SongJunSub/tap          # one-time: the cask runs a post-install step
 brew install --cask mangolove-idea
 ```
 
 The build is **unsigned** (Apple notarization requires a paid Apple Developer account).
 The cask's `postflight` strips the Gatekeeper quarantine right after install, so the app
-opens **without** the "unidentified developer" prompt — no flag needed. (Homebrew removed
-the old `--no-quarantine` flag; the cask does the equivalent itself.) Because the tap runs
-a post-install step, Homebrew prints a one-time tap-trust note — expected for any tap with
-install scripts.
+opens **without** the "unidentified developer" prompt — no flag needed (Homebrew removed
+the old `--no-quarantine` flag; the cask does the equivalent itself).
+
+Because that post-install step runs code, Homebrew **requires a one-time
+`brew trust SongJunSub/tap`** before installing (otherwise it refuses the cask). After
+trusting once, every `install`/`upgrade` is clean — no Gatekeeper prompt, ever.
 
 ## Upgrade / uninstall
 
