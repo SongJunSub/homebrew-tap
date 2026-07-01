@@ -1,6 +1,6 @@
 cask "mangolove-idea" do
-  version "0.1.25"
-  sha256 "a5e442c277c903e8e30b5d6fa475d09b76e4a42c27fb161346e0708f31f260bb"
+  version "0.1.26"
+  sha256 "54be9f157e663d90de3a88ab9fd378b11dac397d9988263b6d0025e5068adb32"
 
   url "https://github.com/SongJunSub/mangolove-idea/releases/download/v#{version}/MangoLove.IDEA-#{version}-arm64.dmg"
   name "MangoLove IDEA"
